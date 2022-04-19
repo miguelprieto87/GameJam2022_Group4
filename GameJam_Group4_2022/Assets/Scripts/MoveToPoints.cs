@@ -47,4 +47,10 @@ public class MoveToPoints : MonoBehaviour
             }
         }
     }
+
+    public void stopAgent()
+    {
+        agent.isStopped = true;
+        agent.velocity = new Vector3(0,0,0);
+    }
 }
