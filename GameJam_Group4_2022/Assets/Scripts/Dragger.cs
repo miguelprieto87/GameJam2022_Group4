@@ -7,22 +7,40 @@ public class Dragger : MonoBehaviour
     private Vector3 screenPoint;
     private Rigidbody myRB;
 
+    bool canDrag = true;
+
+    int width;
+    int length;
+
     private void Start()
     {
         myRB = GetComponent<Rigidbody>();
+        length = GameManager.instance.levelLength;
+        width = GameManager.instance.levelWidth;
     }
     void OnMouseDown()
     {
-        screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        if (canDrag)
+            screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
     }
     void OnMouseDrag()
     {
-        Vector3 cursorScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-        Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(cursorScreenPoint);
+        if (canDrag)
+        {
+            Vector3 cursorScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+            Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(cursorScreenPoint);
 
-        myRB.velocity = new Vector3(0,0,0);
+            myRB.velocity = new Vector3(0, 0, 0);
 
-        cursorPosition.y = Mathf.Clamp(cursorPosition.y, 0, 3);
-        transform.position = cursorPosition;
+            cursorPosition.x = Mathf.Clamp(cursorPosition.x, -width, width);
+            cursorPosition.y = Mathf.Clamp(cursorPosition.y, 0, 1);
+            cursorPosition.z = Mathf.Clamp(cursorPosition.z, -length, length);
+            transform.position = cursorPosition;
+        }
+    }
+    private void Update()
+    {
+        if (GameManager.instance.playerState == playerState.End || GameManager.instance.playerState == playerState.Failed)
+            if (canDrag) canDrag = false;
     }
 }
