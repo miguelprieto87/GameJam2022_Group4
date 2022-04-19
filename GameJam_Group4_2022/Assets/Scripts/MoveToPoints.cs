@@ -2,12 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-public enum playerState
-{
-    End,
-    Failed,
-    Neutral
-}
 [RequireComponent(typeof(NavMeshAgent))]
 public class MoveToPoints : MonoBehaviour
 {
@@ -25,19 +19,20 @@ public class MoveToPoints : MonoBehaviour
     void Start()
     {
         agent.SetDestination(points[pointIndex].position);
-        playerState = playerState.Neutral;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (playerState != GameManager.instance.playerState) playerState = GameManager.instance.playerState;
+
         if (playerState != playerState.End && playerState != playerState.Failed && agent.pathEndPosition 
             != points[pointIndex].position && agent.remainingDistance < 0.5)
         {
             try
             {
                 pointIndex++;
-                if (pointIndex > points.Count - 1) playerState = playerState.End;
+                if (pointIndex > points.Count - 1) GameManager.instance.playerState = playerState.End;
                 agent.SetDestination(points[pointIndex].transform.position);
                 Debug.Log("Setting next destination " + points[pointIndex].name);
             }

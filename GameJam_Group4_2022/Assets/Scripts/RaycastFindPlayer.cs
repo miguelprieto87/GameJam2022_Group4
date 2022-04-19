@@ -39,7 +39,7 @@ public class RaycastFindPlayer : MonoBehaviour
                     Debug.Log("<color=red>Player object found!</color>");
                     try
                     {
-                        target.GetComponent<MoveToPoints>().playerState = playerState.Failed;
+                        GameManager.instance.playerState = playerState.Failed;
                         target.GetComponent<MoveToPoints>().stopAgent();
                     }
                     catch (System.NullReferenceException)
