@@ -32,7 +32,7 @@ public class MoveToPoints : MonoBehaviour
     void Update()
     {
         if (playerState != playerState.End && playerState != playerState.Failed && agent.pathEndPosition 
-            != points[pointIndex].position && agent.remainingDistance < 1)
+            != points[pointIndex].position && agent.remainingDistance < 0.5)
         {
             try
             {
