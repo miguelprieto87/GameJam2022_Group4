@@ -6,10 +6,8 @@ public class RaycastFindPlayer : MonoBehaviour
 {
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private GameObject target;
-    public int rayCount = 50;
-    public float rayDistance;
+    public float rayDistance;//How much will this object move across per translation
     public bool playerFound = false;
-    public GameObject testSpawn;
 
     bool isReversing;
 
@@ -23,13 +21,13 @@ public class RaycastFindPlayer : MonoBehaviour
     void LateUpdate()
     {
         if (!GameManager.instance.isPaused && GameManager.instance.playerState != playerState.End)
-        {
+        {//If the game hasnt yet ended or isnt paused, keep moving
             RaycastHit hit;
 
             if (Physics.Raycast(transform.position, transform.forward, out hit, layerMask) && !playerFound)
             {
                 if (hit.collider.tag == "OOB")
-                {
+                {//Reverses the moment this object hits an Out Of Bounds wall
                     Debug.Log("No hit");
                     isReversing = !isReversing;
                     moveThis();
@@ -39,7 +37,7 @@ public class RaycastFindPlayer : MonoBehaviour
                     if (target.GetComponent<MoveToPoints>().playerState != playerState.Failed)
                     {
                         Debug.Log("<color=red>Player object found!</color>");
-                        try
+                        try//This try catch is only really here for testing purposes
                         {
                             GameManager.instance.playerState = playerState.Failed;
                             target.GetComponent<MoveToPoints>().stopAgent();

@@ -18,7 +18,7 @@ public class MoveToPoints : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        agent.SetDestination(points[pointIndex].position);
+        agent.SetDestination(points[pointIndex].position);//Sets the agent's destination to the first point in the list on startup
     }
 
     // Update is called once per frame
@@ -45,6 +45,7 @@ public class MoveToPoints : MonoBehaviour
 
     public void stopAgent()
     {
+        //Forces the agent to stop and sets their velocity to zero, halting the agent in place
         agent.isStopped = true;
         agent.velocity = new Vector3(0,0,0);
     }
