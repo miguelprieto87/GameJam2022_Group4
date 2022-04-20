@@ -25,7 +25,7 @@ public class Dragger : MonoBehaviour
     }
     void OnMouseDrag()
     {
-        if (canDrag)
+        if (canDrag && !GameManager.instance.isPaused)
         {
             Vector3 cursorScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
             Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(cursorScreenPoint);

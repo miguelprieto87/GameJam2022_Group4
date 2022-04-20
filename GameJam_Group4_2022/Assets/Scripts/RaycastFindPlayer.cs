@@ -22,38 +22,41 @@ public class RaycastFindPlayer : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, transform.forward, out hit, layerMask) && !playerFound)
+        if (!GameManager.instance.isPaused)
         {
-            if (hit.collider.tag == "OOB")
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, transform.forward, out hit, layerMask) && !playerFound)
             {
-                Debug.Log("No hit");
-                isReversing = !isReversing;
+                if (hit.collider.tag == "OOB")
+                {
+                    Debug.Log("No hit");
+                    isReversing = !isReversing;
+                    moveThis();
+                }
+                else if (hit.collider.gameObject == target)
+                {
+                    if (target.GetComponent<MoveToPoints>().playerState != playerState.Failed)
+                    {
+                        Debug.Log("<color=red>Player object found!</color>");
+                        try
+                        {
+                            GameManager.instance.playerState = playerState.Failed;
+                            target.GetComponent<MoveToPoints>().stopAgent();
+                        }
+                        catch (System.NullReferenceException)
+                        {
+                            Debug.Log("GO Only has player tag!");
+                        }
+                        playerFound = true;
+                    }
+                }
+                else
+                {
+                    Debug.Log("<color=green>Just a wall.</color>");
+                }
                 moveThis();
             }
-            else if (hit.collider.gameObject == target)
-            {
-                if (target.GetComponent<MoveToPoints>().playerState != playerState.Failed)
-                {
-                    Debug.Log("<color=red>Player object found!</color>");
-                    try
-                    {
-                        GameManager.instance.playerState = playerState.Failed;
-                        target.GetComponent<MoveToPoints>().stopAgent();
-                    }
-                    catch (System.NullReferenceException)
-                    {
-                        Debug.Log("GO Only has player tag!");
-                    }
-                    playerFound = true;
-                }
-            }
-            else
-            {
-                Debug.Log("<color=green>Just a wall.</color>");
-            }
-            moveThis();
         }
     }
 
