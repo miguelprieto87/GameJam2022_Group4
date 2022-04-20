@@ -12,11 +12,14 @@ public class Dragger : MonoBehaviour
     int width;
     int length;
 
+    public float maxDragHeight = 2;
+    public float minDragHeight = 0;
+
     private void Start()
     {
         myRB = GetComponent<Rigidbody>();
-        length = GameManager.instance.levelLength;
-        width = GameManager.instance.levelWidth;
+        length = GameManager.instance.levelZ;
+        width = GameManager.instance.levelX;
     }
     void OnMouseDown()
     {
@@ -25,7 +28,7 @@ public class Dragger : MonoBehaviour
     }
     void OnMouseDrag()
     {
-        if (canDrag)
+        if (canDrag && !GameManager.instance.isPaused)
         {
             Vector3 cursorScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
             Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(cursorScreenPoint);
@@ -33,7 +36,7 @@ public class Dragger : MonoBehaviour
             myRB.velocity = new Vector3(0, 0, 0);
 
             cursorPosition.x = Mathf.Clamp(cursorPosition.x, -width, width);
-            cursorPosition.y = Mathf.Clamp(cursorPosition.y, 0, 1);
+            cursorPosition.y = Mathf.Clamp(cursorPosition.y, minDragHeight, maxDragHeight);
             cursorPosition.z = Mathf.Clamp(cursorPosition.z, -length, length);
             transform.position = cursorPosition;
         }
