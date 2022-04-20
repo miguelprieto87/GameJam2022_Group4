@@ -15,8 +15,8 @@ public class Dragger : MonoBehaviour
     private void Start()
     {
         myRB = GetComponent<Rigidbody>();
-        length = GameManager.instance.levelLength;
-        width = GameManager.instance.levelWidth;
+        length = GameManager.instance.levelZ;
+        width = GameManager.instance.levelX;
     }
     void OnMouseDown()
     {

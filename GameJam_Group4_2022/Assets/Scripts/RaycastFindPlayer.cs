@@ -22,7 +22,7 @@ public class RaycastFindPlayer : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (!GameManager.instance.isPaused)
+        if (!GameManager.instance.isPaused && GameManager.instance.playerState != playerState.End)
         {
             RaycastHit hit;
 

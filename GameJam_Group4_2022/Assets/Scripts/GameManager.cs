@@ -14,8 +14,8 @@ public class GameManager : MonoBehaviour
 {
     public playerState playerState;
     public static GameManager instance;
-    public int levelWidth;
-    public int levelLength;
+    public int levelX;
+    public int levelZ;
     public bool isPaused;
 
     public GameObject winScreen;
