@@ -2153,10 +2153,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8580293091090285422, guid: 300ac8ba3f1e3c64b812495294e3e157, type: 3}
-      propertyPath: points.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8580293091090285422, guid: 300ac8ba3f1e3c64b812495294e3e157, type: 3}
       propertyPath: points.Array.data[0]
       value: 
       objectReference: {fileID: 1915584191}
@@ -2188,5 +2184,9 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 58221974481453746a0c767a3df6b21c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 300ac8ba3f1e3c64b812495294e3e157, type: 3}
