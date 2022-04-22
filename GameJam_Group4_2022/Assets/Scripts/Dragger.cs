@@ -11,6 +11,7 @@ public class Dragger : MonoBehaviour
 
     int width;
     int length;
+    int x;
 
     public float maxDragHeight = 2;//How high can the object be dragged into the air
     public float minDragHeight = 0;//How high will the object go when initially grabbed
@@ -23,8 +24,23 @@ public class Dragger : MonoBehaviour
     }
     void OnMouseDown()
     {
-        if (canDrag)//On mouse click, checks to see if the object can be dragged
+        if (canDrag)
+        {//On mouse click, checks to see if the object can be dragged
             screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+            x = Random.Range(0, 2);
+            if (x == 0)
+            {
+                FindObjectOfType<AudioManager>().Play("Furniture1");
+            }
+            else if (x == 1)
+            {
+                FindObjectOfType<AudioManager>().Play("Furniture2");
+            }
+            else if (x == 2)
+            {
+                FindObjectOfType<AudioManager>().Play("Furniture3");
+            }
+        }
     }
     void OnMouseDrag()
     {

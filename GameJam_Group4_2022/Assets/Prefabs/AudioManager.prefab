@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5395294883685562102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5395294883685562100}
+  - component: {fileID: 5395294883685562101}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5395294883685562100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5395294883685562102}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2908864, y: 3.5111923, z: -2.748704}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5395294883685562101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5395294883685562102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fd1d32a53467a84db69d1cba881176d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Button
+    clip: {fileID: 8300000, guid: f140fce02aae50e478824c8b16561744, type: 3}
+    volume: 0.533
+    pitch: 1.16
+    loop: 0
+    source: {fileID: 0}
+  - name: Furniture1
+    clip: {fileID: 8300000, guid: 9d8013766227b1e42a33e903aa9f5343, type: 3}
+    volume: 0.62
+    pitch: 0.58
+    loop: 0
+    source: {fileID: 0}
+  - name: Furniture2
+    clip: {fileID: 8300000, guid: 6a640901f707d90429cf5478e589536e, type: 3}
+    volume: 0.75
+    pitch: 0.75
+    loop: 0
+    source: {fileID: 0}
+  - name: Furniture3
+    clip: {fileID: 8300000, guid: 81fe354d5295b644eb08c627c8c88915, type: 3}
+    volume: 0.495
+    pitch: 0.39
+    loop: 0
+    source: {fileID: 0}
+  - name: Level
+    clip: {fileID: 8300000, guid: 90ae3c5bcb451b346aab165846f0ce75, type: 3}
+    volume: 0.457
+    pitch: 0.41
+    loop: 1
+    source: {fileID: 0}
+  - name: Lose
+    clip: {fileID: 8300000, guid: 48fb98247edb2d34b8eb36a4d5627f29, type: 3}
+    volume: 0.471
+    pitch: 0.42
+    loop: 0
+    source: {fileID: 0}
+  - name: LoseSong
+    clip: {fileID: 8300000, guid: 37bc55162e68a38498b118bf481683ec, type: 3}
+    volume: 0.376
+    pitch: 0.25
+    loop: 0
+    source: {fileID: 0}
+  - name: Menu
+    clip: {fileID: 8300000, guid: 2200c186e43e0da45abae912bc673c84, type: 3}
+    volume: 0.426
+    pitch: 0.41
+    loop: 1
+    source: {fileID: 0}
+  - name: Walking
+    clip: {fileID: 8300000, guid: 3a18011a398a9ee4ba9313e3941d9c02, type: 3}
+    volume: 0.452
+    pitch: 0.17
+    loop: 0
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: 686b1c284bf7bcc4cbdce715a47a04ec, type: 3}
+    volume: 0.566
+    pitch: 0.59
+    loop: 0
+    source: {fileID: 0}
+  - name: WinSong
+    clip: {fileID: 8300000, guid: 0dfd8ee158ae043418a6667718d3c885, type: 3}
+    volume: 0.635
+    pitch: 0.5
+    loop: 0
+    source: {fileID: 0}
