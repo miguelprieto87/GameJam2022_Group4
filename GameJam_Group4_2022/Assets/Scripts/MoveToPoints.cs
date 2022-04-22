@@ -49,4 +49,25 @@ public class MoveToPoints : MonoBehaviour
         agent.isStopped = true;
         agent.velocity = new Vector3(0,0,0);
     }
+
+    public void playFootstep()
+    {
+        if (GameManager.instance.playerState == playerState.Neutral)
+        {
+            int x;
+            x = Random.Range(0, 2);
+            if (x <= 0)
+            {
+                FindObjectOfType<AudioManager>().Play("Walk1");
+            }
+            else if (x == 1)
+            {
+                FindObjectOfType<AudioManager>().Play("Walk2");
+            }
+            else if (x >= 2)
+            {
+                FindObjectOfType<AudioManager>().Play("Walk3");
+            }
+        }
+    }
 }

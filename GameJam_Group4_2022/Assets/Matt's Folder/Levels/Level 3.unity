@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43645772, g: 0.4749211, b: 0.5151133, a: 1}
+  m_IndirectSpecularColor: {r: 0.43645787, g: 0.47492123, b: 0.5151137, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -798,6 +798,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.59
       objectReference: {fileID: 0}
+    - target: {fileID: 8580293091090285329, guid: 300ac8ba3f1e3c64b812495294e3e157, type: 3}
+      propertyPath: m_Speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580293091090285333, guid: 300ac8ba3f1e3c64b812495294e3e157, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1488,6 +1492,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Draggable Cabinet
       objectReference: {fileID: 0}
+    - target: {fileID: 5715949971286100633, guid: 1db3744cace926c4baf3fef3862bbb3b, type: 3}
+      propertyPath: maxDragHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5715949971286100633, guid: 1db3744cace926c4baf3fef3862bbb3b, type: 3}
+      propertyPath: minDragHeight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5715949971286100636, guid: 1db3744cace926c4baf3fef3862bbb3b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1834,19 +1846,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3931001595852965542, guid: 1a04babe5fffac7409a72c647a46c17e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.13079582
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3931001595852965542, guid: 1a04babe5fffac7409a72c647a46c17e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3931001595852965542, guid: 1a04babe5fffac7409a72c647a46c17e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99140936
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3931001595852965542, guid: 1a04babe5fffac7409a72c647a46c17e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3931001595852965542, guid: 1a04babe5fffac7409a72c647a46c17e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1854,7 +1866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3931001595852965542, guid: 1a04babe5fffac7409a72c647a46c17e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 195.031
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 3931001595852965542, guid: 1a04babe5fffac7409a72c647a46c17e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

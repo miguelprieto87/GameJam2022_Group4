@@ -86,4 +86,10 @@ public class GameManager : MonoBehaviour
             
         }
     }
+
+    public void quitOut()
+    {
+        Application.Quit();
+        Debug.Log("Quitting game.");
+    }
 }
