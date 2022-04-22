@@ -52,6 +52,13 @@ public class AudioManager : MonoBehaviour
 
 
     }
+    public void ButtonPressSound()
+    {
+        FindObjectOfType<AudioManager>().Play("Button");   
+    }
+
+    
+    
 }
 
 

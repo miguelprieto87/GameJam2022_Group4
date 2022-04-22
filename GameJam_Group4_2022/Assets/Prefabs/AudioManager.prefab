@@ -46,67 +46,67 @@ MonoBehaviour:
   sounds:
   - name: Button
     clip: {fileID: 8300000, guid: f140fce02aae50e478824c8b16561744, type: 3}
-    volume: 0.533
-    pitch: 1.16
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Furniture1
     clip: {fileID: 8300000, guid: 9d8013766227b1e42a33e903aa9f5343, type: 3}
-    volume: 0.62
-    pitch: 0.58
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Furniture2
     clip: {fileID: 8300000, guid: 6a640901f707d90429cf5478e589536e, type: 3}
-    volume: 0.75
-    pitch: 0.75
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Furniture3
     clip: {fileID: 8300000, guid: 81fe354d5295b644eb08c627c8c88915, type: 3}
-    volume: 0.495
-    pitch: 0.39
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Level
     clip: {fileID: 8300000, guid: 90ae3c5bcb451b346aab165846f0ce75, type: 3}
-    volume: 0.457
-    pitch: 0.41
+    volume: 1
+    pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Lose
     clip: {fileID: 8300000, guid: 48fb98247edb2d34b8eb36a4d5627f29, type: 3}
-    volume: 0.471
-    pitch: 0.42
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: LoseSong
     clip: {fileID: 8300000, guid: 37bc55162e68a38498b118bf481683ec, type: 3}
-    volume: 0.376
-    pitch: 0.25
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Menu
     clip: {fileID: 8300000, guid: 2200c186e43e0da45abae912bc673c84, type: 3}
-    volume: 0.426
-    pitch: 0.41
+    volume: 1
+    pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Walking
     clip: {fileID: 8300000, guid: 3a18011a398a9ee4ba9313e3941d9c02, type: 3}
-    volume: 0.452
-    pitch: 0.17
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Win
     clip: {fileID: 8300000, guid: 686b1c284bf7bcc4cbdce715a47a04ec, type: 3}
-    volume: 0.566
-    pitch: 0.59
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: WinSong
     clip: {fileID: 8300000, guid: 0dfd8ee158ae043418a6667718d3c885, type: 3}
-    volume: 0.635
-    pitch: 0.5
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}

@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject winScreen;
     public GameObject failScreen;
     public GameObject pauseButton;
-
+    
     // Start is called before the first frame update
     public void Awake()
     {
@@ -30,10 +30,31 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (playerState == playerState.End) if (winScreen.activeSelf != true) winScreen.SetActive(true);
-        if (playerState == playerState.Failed) if (failScreen.activeSelf != true) failScreen.SetActive(true);
+        if (playerState == playerState.End)
+        {
+            if (winScreen.activeSelf != true)
+            {
+                FindObjectOfType<AudioManager>().Play("Win");
+                winScreen.SetActive(true);
+            }
+        }
+        if (playerState == playerState.Failed)
+        {
+            if (failScreen.activeSelf != true)
+            {
+                FindObjectOfType<AudioManager>().Play("Lose");
+                failScreen.SetActive(true);
+            }
+        }
 
-        if (playerState == playerState.End || playerState == playerState.Failed) if (pauseButton.activeSelf == true) pauseButton.SetActive(false);   
+        if (playerState == playerState.End || playerState == playerState.Failed)
+        {
+            if (pauseButton.activeSelf == true)
+            {
+                
+                pauseButton.SetActive(false);
+            }
+        } 
     }
 
     public void changeScenes(string sceneName)
@@ -55,12 +76,14 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Resuming Game");
             isPaused = false;
+            
         }
 
         if (speed == 0)
         {
             Debug.Log("Game Paused");
             isPaused = true;
+            
         }
     }
 }
